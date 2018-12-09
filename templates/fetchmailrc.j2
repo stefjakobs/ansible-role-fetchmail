@@ -1,0 +1,9 @@
+{% for item in fetchmail_polls %}
+## {{ item.name }}
+poll {{ item.server }} protocol {{ item.protocol|default('pop3') }}
+username "{{ item.username }}" with password "{{ item.password }}" is {{ item.mail }} here keep ssl sslproto '{{ item.sslproto|default('TLS1')|upper }}' sslcertck
+
+{% endfor %}
+## Global
+smtphost {{ fetchmail_smtphost }}
+antispam 554

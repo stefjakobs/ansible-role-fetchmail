@@ -1,0 +1,14 @@
+galaxy_info:
+  author: Stefan Jakobs
+  description: Install fetchmail and create simple rc config
+  license: MIT
+  min_ansible_version: 2.4
+  platforms:
+  - name: Debian
+    versions:
+     - stretch
+
+  galaxy_tags:
+  - fetchmail
+
+dependencies: []

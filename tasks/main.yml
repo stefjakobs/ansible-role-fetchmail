@@ -1,0 +1,23 @@
+---
+
+- name: install fetchmail
+  apt:
+    name: fetchmail
+    state: present
+
+- name: install fetchmailrc file
+  template:
+    src: fetchmailrc.j2
+    dest: "/home/{{ fetchmail_user }}/.fetchmailrc"
+    owner: "{{ fetchmail_user }}"
+    group: 'nogroup'
+    mode: 0600
+
+#- name: install cronjob
+#  cron:
+#    name: "run fetchmail"
+#    minute: '*/15'
+#    job: '/usr/bin/fetchmail -s || [ $? -eq 1 ]'
+#  become: yes
+#  become_user: "{{ fetchmail_user }}"
+

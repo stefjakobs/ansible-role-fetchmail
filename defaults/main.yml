@@ -1,0 +1,12 @@
+---
+
+fetchmail_user: foobar
+fetchmail_smtphost: localhost/25
+fetchmail_polls:
+  - name: example.com
+    server: host.example.com
+    protocol: 'pop3'
+    username: 'foobar'
+    password: 'secret'
+    mail: 'foobar@example.com'
+    sslproto: 'TLS1'
